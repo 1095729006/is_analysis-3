@@ -1,0 +1,16 @@
+@startuml
+|游客|
+start
+	:输入查询条件;
+	|#AntiqueWhite|系统|
+if(信息不存在?) then (存在)
+	:返回图书信息;
+else
+	:没有该图书信息;
+endif
+:返回信息;
+|游客|
+:查看返回结果;
+
+stop
+@enduml
