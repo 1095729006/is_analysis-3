@@ -1,0 +1,42 @@
+@startuml
+actor manager
+
+manager->borrowInfor:查询显示
+activate manager
+activate borrowInfor
+deactivate manager
+deactivate borrowInfor
+
+borrowInfor->borrow:显示超时未还书籍
+activate borrow
+activate borrowInfor
+deactivate borrow
+deactivate borrowInfor
+
+actor reader
+borrowInfor->reader:提示罚款金额
+activate reader
+activate borrowInfor
+deactivate reader
+deactivate borrowInfor
+
+reader->manager:提交罚款
+activate reader
+activate manager
+deactivate reader
+deactivate manager
+
+manager->borrowInfor:update()更新信息
+activate manager
+activate borrowInfor
+deactivate reader
+deactivate manager
+
+manager->borrow:update()更新信息
+activate manager
+activate borrow
+deactivate manager
+deactivate borrow
+
+
+@enduml
