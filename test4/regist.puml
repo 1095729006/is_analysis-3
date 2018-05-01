@@ -1,0 +1,17 @@
+@startuml
+
+actor visitor
+visitor->注册界面:访问
+activate visitor
+activate 注册界面
+deactivate visitor
+
+注册界面->登陆界面:regist()
+activate 登陆界面
+deactivate 注册界面
+
+登陆界面->图书管理系统:login()
+activate 图书管理系统
+deactivate 图书管理系统
+deactivate 登陆界面
+@enduml

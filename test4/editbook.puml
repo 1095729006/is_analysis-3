@@ -1,0 +1,44 @@
+
+@startuml
+actor reader
+
+reader->图书管理系统:login()
+activate reader
+deactivate reader
+图书管理系统->查看图书信息界面:menu()
+activate 图书管理系统
+activate 查看图书信息界面
+deactivate 图书管理系统
+deactivate 查看图书信息界面
+
+查看图书信息界面->books:lookinfor(bookid)
+activate 查看图书信息界面
+activate books
+deactivate 查看图书信息界面
+deactivate books
+
+books->查看图书信息界面:返回图书信息
+activate books
+activate 查看图书信息界面
+deactivate books
+deactivate 查看图书信息界面
+
+查看图书信息界面->修改图书信息界面:查找图书id或书名
+activate 查看图书信息界面
+activate 修改图书信息界面
+deactivate 查看图书信息界面
+deactivate 修改图书信息界面
+
+修改图书信息界面->books:update()
+activate 修改图书信息界面
+activate books
+deactivate 修改图书信息界面
+deactivate books
+
+books->查看图书信息界面:返回
+activate books
+activate 查看图书信息界面
+deactivate books
+deactivate 查看图书信息界面
+
+@enduml

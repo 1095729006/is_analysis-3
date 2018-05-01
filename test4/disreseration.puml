@@ -1,0 +1,29 @@
+@startuml
+
+actor reader
+
+reader->图书管理系统:login()
+activate 图书管理系统
+
+图书管理系统->取消预定界面:menu()
+activate 取消预定界面
+deactivate 图书管理系统
+
+取消预定界面->reseration:查看预定信息
+deactivate 取消预定界面
+activate reseration
+
+reseration->取消预定界面:返回取消预定的信息
+activate 取消预定界面
+deactivate reseration
+deactivate 取消预定界面
+
+取消预定界面->books:update()
+activate 取消预定界面
+activate books
+books->取消预定界面:取消预约成功
+deactivate 取消预定界面
+deactivate books
+
+
+@enduml

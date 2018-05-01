@@ -1,0 +1,24 @@
+@startuml
+
+actor reader
+reader->图书管理系统:login()
+activate 图书管理系统
+
+图书管理系统->预定图书界面:menu()
+activate 预定图书界面
+deactivate 图书管理系统
+
+预定图书界面->reseration:checkreseration()
+activate reseration
+reseration->预定图书界面:getinfor()
+deactivate 预定图书界面
+deactivate reseration
+
+预定图书界面->books:create(reserationInfor)
+activate 预定图书界面
+activate books
+books->预定图书界面:预定成功
+deactivate 预定图书界面
+deactivate books
+
+@enduml
