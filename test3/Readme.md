@@ -24,8 +24,9 @@ class 管理员{
 }
 
 class 游客{
- 注册账户
-}
+ 账户
+ 密码
+ 确认密码}
 
 class 书库信息{
 图书总量
@@ -122,7 +123,9 @@ class 管理员{
 <pre>
 @startuml
 class 游客{
- 注册账户
+ 账户：123
+ 密码：qwe
+ 确认密码：qwe
 }
 @enduml
 </pre>
